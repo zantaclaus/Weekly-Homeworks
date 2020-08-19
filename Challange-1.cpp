@@ -1,29 +1,36 @@
 #include<iostream>
 #include<math.h>
 using namespace std;
-int outputNum(int x, int y);
+void outputNum(int x, int y);
 double sumNumber(int x, int y);
 double sumNumberSquare(int x, int y);
 
 
 int main()
 {
-	int x, y, N;
-	double average, sd;
+	int x = 0, y = 0, N = 0;
+	double average = 0, sd = 0;
 
 	cin >> x >> y;
 	if (x < y)
 		N = y - x + 1;
-	else
+	else if (x > y)
 		N = x - y + 1;
+	else
+	{
+		printf("%d", x);
+		printf("\nAverage = %d.0", x);
+		printf("\nSD = 0.00");
+		return 0;
+	}
 
-	outputNum(x, y); //เเสดงผลเลข จากมากไปน้อย หรือน้อยไปมาก
+	outputNum(x, y);
 
-	average = sumNumber(x, y) / N; //หาค่าเฉลี่ย ฟังก์ชันผลรวม หาร จำนวนเลข
-	printf("\nAverage = %.1lf", average); //เเสดงผล ค่าเฉลี่ย
+	average = sumNumber(x, y) / N;
+	printf("\nAverage = %.1lf", average);
 
-	sd = sqrt((sumNumberSquare(x, y) - (N * pow(average, 2))) / (N - 1)); //หาค่า S.D 
-	printf("\nSD = %.2lf", sd); //เเสดงผล S.D.
+	sd = sqrt((sumNumberSquare(x, y) - (N * pow(average, 2))) / (N - 1));
+	printf("\nSD = %.2lf", sd);
 
 
 	return 0;
@@ -32,7 +39,7 @@ int main()
 double sumNumber(int x, int y)
 {
 	int sum = 0;
-	for (int i = x; x<y?i<=y:i>=y ; x<y?i++:i--)
+	for (int i=x; x<y?i<=y:i>=y ; x<y?i++:i--)
 	{
 		sum = sum + i;
 	}
@@ -42,19 +49,18 @@ double sumNumber(int x, int y)
 double sumNumberSquare(int x, int y)
 {
 	int sum = 0;
-	for (int i = x; x<y?i<=y:i>=y ; x<y?i++:i--)
+	for (int i=x; x<y?i<=y:i>=y ; x<y?i++:i--)
 	{
 		sum = sum + i * i;
 	}
 	return sum;
 }
 
-int outputNum(int x, int y)
+void outputNum(int x, int y)
 {
-	for (int i = x; x<y?i<=y:i>=y ; x<y?i++:i--)
+	for (int i=x; x<y?i<=y:i>=y ; x<y?i++:i--)
 	{
 		cout << i;
 		if (i != y) cout << " ";
 	}
 }
-
