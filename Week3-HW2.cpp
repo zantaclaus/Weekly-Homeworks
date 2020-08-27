@@ -37,4 +37,5 @@ int main()
 			cout << i+1 << " " << max;
 		}
 	}
+	return 0;
 }
