@@ -3,7 +3,7 @@ using namespace std;
 int main()
 {
 	int N, temp;
-	int str[100], code[100];
+	int str[600], code[600];
 	cin >> N;
 	for(int i=1;i<=N;i++)
 	{
@@ -14,8 +14,8 @@ int main()
 		}
 		else
 		{
-			str[i] = i%100;
-			code[i] = i%100;
+			str[i] = i%100;  
+			code[i] = i%100; 
 		}
 	}
 	for(int i=1;i<=N;i++)
