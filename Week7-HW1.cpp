@@ -33,8 +33,9 @@ int main()
             }
         }  
     }
-    cout << ans;
     
+    cout << ans;
+    return 0;
 }
 
 int findLastThreeDigit(int x)
