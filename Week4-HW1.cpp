@@ -33,7 +33,7 @@ int main()
 		{
 			cout << Matrix[i][j] << " ";
 		}
-		printf("\n");
+		cout << endl;
 	}
 	
 	return 0;
