@@ -10,6 +10,7 @@ struct school{
 };
 struct school student[100];
 int N, Y, count = 0;
+int checkEndLine = 0;
 
 int main()
 {
@@ -34,7 +35,8 @@ int main()
                 cout << student[i].id << " ";
                 cout << student[i].firstName << " ";
                 cout << student[i].lastName;
-                if(i < N-1)
+                checkEndLine++;
+                if(checkEndLine < count)
                     cout << endl;
             }
         }
